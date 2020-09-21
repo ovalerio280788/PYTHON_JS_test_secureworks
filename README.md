@@ -27,6 +27,7 @@ cd test_secureworks                 // move to the repository folder
 pip install -r requirements.txt     // install dependencies from file
 pip freeze                          // to verify the installed libraries
 ```
+- For Cypress run `npm install` to generate the `node_modules`.
 ## How to run tests on Part 1?
 This is the part related to unit tests (we assume that the previous steps regarding "Pre-requisites to run locally" were done). 
 The test cases for this part were written in Python using Pytest as test runner. Use the following commands to run different set of test cases.
@@ -56,13 +57,31 @@ python/test_part1/tests/test_largest_words.py::test_read_empty_file PASSED
 ```
 ## How to run tests on Part 2 (Behave)?
 This is the part related to UI with API test (we assume that the previous steps regarding "Pre-requisites to run locally" were done).
+For this part you need to configure the Chrome and Firefox (Geckodriver) to be accesible anywhere. On Mac you can follow these steps:
+- Create a new folder to put the browser drivers.
+- Add the path of the folder created at the end of this file: `/etc/paths`.
+- If you have the terminal opened then close it and open it again.
+- Download Chromedriver based on your chrome version (https://chromedriver.chromium.org/downloads) into the just created folder.
+- Download Geckodriver (https://github.com/mozilla/geckodriver/releases) into the just created folder.
+
 The test cases for this part were written in Python using Behave (BDD framework) as test runner. Use the following commands to run the test case.
 ```bash
 export username=shopmanager
 export password="<the_password_that_is_not_here_for_security>"  // Use "" to wrap the password if it has spaces on it. i.e password="hello world 123"
-
+behave python/test_part2/features/                              // to run the test case on Chrome by default
+behave python/test_part2/features/ -D browser=firefox           // to run the test case on Firefox
 ```
-
 ## How to run tests on Part 2 (Cypress)?
+This is the part related to UI with API test (we assume that the previous steps regarding "Pre-requisites to run locally" were done).
+
+The test cases for this part were written in Javascript using Cypress as test runner. Use the following commands to run the test case.
+```bash
+export CYPRESS_USERNAME=shopmanager
+export CYPRESS_PASSWORD="<the_password_that_is_not_here_for_security>"  // Use "" to wrap the password if it has spaces on it. i.e password="hello world 123"
+
+// Under package.json I added 2 custom script nodes to run tests against Firefox and Chrome
+npm run test-firefox                // to run the test on firefox
+npm run test-chrome                 // to run the test on firefox
+```
 
 
