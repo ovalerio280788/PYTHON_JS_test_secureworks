@@ -24,6 +24,14 @@ def before_feature(context, feature):
     context.driver.set_page_load_timeout(context.config.userdata.get('default_page_load_time'))
 
 
+def after_feature(context, feature):
+    try:
+        context.driver.quit()
+        context.driver = None
+    except Exception as e:
+        print(str(e))
+
+
 def after_scenario(context, scenario):
     if "remove_product" in scenario.tags:
         # remove the product if the test case has the "remove_product" tag
