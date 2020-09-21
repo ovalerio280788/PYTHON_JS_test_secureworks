@@ -29,7 +29,7 @@ pip freeze                          // to verify the installed libraries
 ```
 ## How to run tests on Part 1?
 This is the part related to unit tests (we assume that the previous steps regarding "Pre-requisites to run locally" were done). 
-The test cases for this parte were written in Python using Pytest as test runner. Use the following commands to run different set of test cases.
+The test cases for this part were written in Python using Pytest as test runner. Use the following commands to run different set of test cases.
 ```bash
 export PYTHONPATH=$(pwd)    // set the python path/(working directory) as the root path of the repository
 pytest -v                   // to run all test cases
@@ -54,85 +54,15 @@ python/test_part1/tests/test_largest_words.py::test_read_invalid_file_format PAS
 python/test_part1/tests/test_largest_words.py::test_read_corrupted_file PASSED                                                                                                                       [ 87%]
 python/test_part1/tests/test_largest_words.py::test_read_empty_file PASSED
 ```
-## How to run tests on Part 2?
+## How to run tests on Part 2 (Behave)?
+This is the part related to UI with API test (we assume that the previous steps regarding "Pre-requisites to run locally" were done).
+The test cases for this part were written in Python using Behave (BDD framework) as test runner. Use the following commands to run the test case.
+```bash
+export username=shopmanager
+export password="<the_password_that_is_not_here_for_security>"  // Use "" to wrap the password if it has spaces on it. i.e password="hello world 123"
 
+```
 
-
-
-
-# TestAutomation
-In the repository we have code that cover tests for Solstice (pytest) and Kepler (Behave). The readme files per each project is still in progress. 
-
-## Git commit template.
-### How to setup.
-Follow these step to setup the commit template in your local environment.
-
-- Open a terminal in your local environment.
-- Go to the root path of this repository in your local machine: `cd <root_path_of_this_repo>`
-- Run this command: ```git config --global commit.template IT/```
-- You are done to start using the template.
-
-### How to use.
-Follow these steps to use the commit template in your local environment.
-- Start your task/user story, for that create your feature branch as usual and make the changes you need to do.
-- Once you need to commit your code, do it this way: `git commit` **(Without the -m flag)** and press enter.
-- A new screen will be opened in your terminal, it should look like this: 
-> \# <type>:<subject>
-> .
-> // If applied, this commit will...
-> .
->// Explain why this change is being made:
-> .
-// Binaries affected ( Kepler, api_v1, api_v2, Clientsim, Zapi, etc )
-> .
-// Provide links to story, task, bug, articles or other resources
-> .
-> .
-> \# SEMANTIC COMMIT MESSAGES
-> \# feat:add hat wobble
-> \# ^--^  ^------------^
-> \# |     |
-> \# |     +-> Summary in present tense.
-> \# |
-> \# +-------> Type: chore, docs, feat, fix, refactor, style, or test.
-> \#
-> \# MORE EXAMPLES:
-> \#
-> \# feat:new feature for the user, not a new feature for build script)
-> \# fix: (bug fix for the user, not a fix to a build script)
-> \# docs: (changes to the documentation)
-> \# style: (formatting, missing semi colons, etc; no production code change)
-> \# refactor: (refactoring production code, eg. renaming a variable)
-> \# test: (adding missing tests, refactoring tests; no production code change)
-> \# chore: (updating grunt tasks etc; no production code change)
-> \#
-> \#
-> \# Please enter the commit message for your changes. Lines starting
-> \# with '#' will be ignored, and an empty message aborts the commit.
-> \#
-> \# On branch AT-465
-> \# Changes to be committed:
-> \#       modified:   IT/.git_commit_msg.text
-> \#
-> \# Untracked files:
-> \#       IT/RemovePod.py
-> \#       allure-results/
-> \#
-
-- You need to fill the spaces **under the lines** that starts with //, like `If applied, this commit will…` for example, to enable editing, press `i` key in your keyboard.
-- Once you fill the spaces, press `esc` botton in your keyboard, and then tipe `:wq` to write changes and quit.
-- After that you can push your changes to github.
-- That's it.
-
-We can see more information here:
--- https://mersive.atlassian.net/wiki/spaces/PDO/pages/65863711/Commit+Template
--- https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
-
-
-
-
-
-
-
+## How to run tests on Part 2 (Cypress)?
 
 
