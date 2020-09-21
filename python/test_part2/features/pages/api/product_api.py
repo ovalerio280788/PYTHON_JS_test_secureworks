@@ -1,4 +1,4 @@
-from pip._vendor import requests
+import requests
 
 from python.test_part2.features.pages.api.api_base import ApiBase
 
