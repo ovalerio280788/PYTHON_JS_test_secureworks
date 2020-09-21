@@ -1,0 +1,25 @@
+{
+  "name": "test_secureworks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "test-chrome": "cypress run -b chrome",
+    "test-firefox": "cypress run -b firefox"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ovalerio280788/test_secureworks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ovalerio280788/test_secureworks/issues"
+  },
+  "homepage": "https://github.com/ovalerio280788/test_secureworks#readme",
+  "devDependencies": {
+    "cypress": "^5.2.0"
+  }
+}
